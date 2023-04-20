@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ViewModel.Views.FriendPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Label Text="Nimi"></Label>
+                <Entry Text="{Binding Name}" FontSize="Medium"></Entry>
+                <Label Text="Email"></Label>
+                <Entry Text="{Binding Email}" FontSize="Medium"></Entry>
+                <Label Text="Telefon"></Label>
+                <Entry Text="{Binding Telefon}" FontSize="Medium"></Entry>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Button
+                    Text="Lisa"
+                    Command="{Binding ListViewModel.SaveFriendCommand}"
+                    CommandParameter="{Binding}">
+                </Button>
+                <Button
+                    Text="Kustuta"
+                    Command="{Binding ListViewModel.DeleteFriendCommand}"
+                    CommandParameter="{Binding}">
+                </Button>
+                <Button
+                    Text="Tagasi"
+                    Command="{Binding ListViewModel.BackCommand}">
+                </Button>
+
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
