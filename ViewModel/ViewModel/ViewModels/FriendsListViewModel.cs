@@ -13,10 +13,10 @@ namespace ViewModel.ViewModels
     {
         public ObservableCollection<FriendViewModel> Friends { get; set; }
         public event PropertyChangedEventHandler PropertyChanged;
-        public ICommand CreateFriendCommand { get; set; }
-        public ICommand DeleteFriendCommand { get; set; }
-        public ICommand SaveFriendCommand { get; set; }
-        public ICommand BackCommand { get; set; }
+        public ICommand CreateFriendCommand {  get; set; }
+        public ICommand DeleteFriendCommand {  get; set; }
+        public ICommand SaveFriendCommand {  get; set; }
+        public ICommand BackCommand {  get; set; }
         FriendViewModel selectedFriend;
         public INavigation Navigation { get; set; }
 
@@ -47,7 +47,7 @@ namespace ViewModel.ViewModels
 
         private void CreateFriend()
         {
-            Navigation.PopAsync(new FriendPage( new FriendViewModel() { ListViewModel = this }));
+            Navigation.PushAsync(new FriendPage( new FriendViewModel() { ListViewModel = this }));
         }
 
         public FriendViewModel SelectedFriend
